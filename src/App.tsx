@@ -10,6 +10,7 @@ import { AppSidebar } from "@/components/Layout/Sidebar";
 import { Header } from "@/components/Layout/Header";
 import Dashboard from "./pages/Dashboard";
 import POS from "./pages/POS";
+import SalesSummary from "./pages/SalesSummary";
 import Inventory from "./pages/Inventory";
 import Customers from "./pages/Customers";
 import Suppliers from "./pages/Suppliers";
@@ -32,12 +33,13 @@ function AppContent() {
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
         <AppSidebar />
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-w-0">
           <Header />
-          <main className="flex-1 p-6">
+          <main className="flex-1 p-2 md:p-6 overflow-auto">
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/pos" element={<POS />} />
+              <Route path="/sales-summary" element={<SalesSummary />} />
               <Route path="/inventory" element={<Inventory />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/suppliers" element={<Suppliers />} />
