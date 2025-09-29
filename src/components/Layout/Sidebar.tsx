@@ -6,12 +6,14 @@ import {
   Package,
   Receipt,
   Users,
+  UserCog,
   Settings,
   TrendingUp,
   Building2,
   ChevronLeft,
   ChevronRight,
   LogOut,
+  Truck
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
@@ -31,9 +33,11 @@ const menuItems = [
   { title: 'Dashboard', url: '/dashboard', icon: LayoutDashboard },
   { title: 'Punto de Venta', url: '/pos', icon: ShoppingCart },
   { title: 'Inventario', url: '/inventory', icon: Package },
+  { title: 'Clientes', url: '/customers', icon: Users },
+  { title: 'Proveedores', url: '/suppliers', icon: Truck },
   { title: 'Facturación', url: '/billing', icon: Receipt },
   { title: 'Finanzas', url: '/finances', icon: TrendingUp },
-  { title: 'Usuarios', url: '/users', icon: Users },
+  { title: 'Usuarios', url: '/users', icon: UserCog },
   { title: 'Empresa', url: '/company', icon: Building2 },
   { title: 'Configuración', url: '/settings', icon: Settings },
 ];

@@ -11,6 +11,8 @@ import { Header } from "@/components/Layout/Header";
 import Dashboard from "./pages/Dashboard";
 import POS from "./pages/POS";
 import Inventory from "./pages/Inventory";
+import Customers from "./pages/Customers";
+import Suppliers from "./pages/Suppliers";
 import Billing from "./pages/Billing";
 import Finances from "./pages/Finances";
 import Users from "./pages/Users";
@@ -37,6 +39,8 @@ function AppContent() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/pos" element={<POS />} />
               <Route path="/inventory" element={<Inventory />} />
+              <Route path="/customers" element={<Customers />} />
+              <Route path="/suppliers" element={<Suppliers />} />
               <Route path="/billing" element={<Billing />} />
               <Route path="/finances" element={<Finances />} />
               <Route path="/users" element={<Users />} />
