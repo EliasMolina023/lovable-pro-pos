@@ -13,7 +13,10 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
-  Truck
+  Truck,
+  Key,
+  HelpCircle,
+  Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
@@ -40,7 +43,6 @@ const menuItems = [
   { title: 'Finanzas', url: '/finances', icon: TrendingUp },
   { title: 'Usuarios', url: '/users', icon: UserCog },
   { title: 'Empresa', url: '/company', icon: Building2 },
-  { title: 'Configuración', url: '/settings', icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -95,16 +97,94 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <div className="mt-auto p-4 border-t">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={logout}
-            className="w-full"
-          >
-            <LogOut className="w-4 h-4 mr-2" />
-            {!collapsed && 'Cerrar Sesión'}
-          </Button>
+        <div className="mt-auto border-t">
+          <SidebarGroup>
+            <SidebarGroupLabel>Sistema</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <NavLink
+                      to="/activation"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                          isActive
+                            ? 'bg-primary text-primary-foreground'
+                            : 'hover:bg-accent hover:text-accent-foreground'
+                        }`
+                      }
+                    >
+                      <Key className="w-5 h-5" />
+                      {!collapsed && <span>Activación</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <NavLink
+                      to="/settings"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                          isActive
+                            ? 'bg-primary text-primary-foreground'
+                            : 'hover:bg-accent hover:text-accent-foreground'
+                        }`
+                      }
+                    >
+                      <Settings className="w-5 h-5" />
+                      {!collapsed && <span>Configuración</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <NavLink
+                      to="/audit"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                          isActive
+                            ? 'bg-primary text-primary-foreground'
+                            : 'hover:bg-accent hover:text-accent-foreground'
+                        }`
+                      }
+                    >
+                      <Shield className="w-5 h-5" />
+                      {!collapsed && <span>Auditoría</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <NavLink
+                      to="/support"
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                          isActive
+                            ? 'bg-primary text-primary-foreground'
+                            : 'hover:bg-accent hover:text-accent-foreground'
+                        }`
+                      }
+                    >
+                      <HelpCircle className="w-5 h-5" />
+                      {!collapsed && <span>Soporte</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+
+          <div className="p-4">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={logout}
+              className="w-full"
+            >
+              <LogOut className="w-4 h-4 mr-2" />
+              {!collapsed && 'Cerrar Sesión'}
+            </Button>
+          </div>
         </div>
       </SidebarContent>
     </Sidebar>

@@ -18,6 +18,10 @@ import Billing from "./pages/Billing";
 import Finances from "./pages/Finances";
 import Users from "./pages/Users";
 import Company from "./pages/Company";
+import Activation from "./pages/Activation";
+import Settings from "./pages/Settings";
+import Support from "./pages/Support";
+import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +51,10 @@ function AppContent() {
               <Route path="/finances" element={<Finances />} />
               <Route path="/users" element={<Users />} />
               <Route path="/company" element={<Company />} />
+              <Route path="/activation" element={<Activation />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/audit" element={<Audit />} />
               <Route path="/" element={<Dashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
